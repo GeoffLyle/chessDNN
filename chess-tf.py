@@ -7,7 +7,7 @@ class baseBoard():
     def __init__(self):
         self.boardState = chess.Board()
         self.moveStack = []
-        self.legalMoveList = [] 
+        #self.legalMoveList = [] 
         self.legalMoveList = self.getLegalMoveList()
         self.cunt = 1
     def getLegalMoveList(self):
@@ -19,4 +19,7 @@ class baseBoard():
             c.append(str(b[i]))
             i += 1
         return c
+    def reset(self):
+        self.boardState.reset()
+        return self.boardState
 board = baseBoard()
